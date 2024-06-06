@@ -32,9 +32,11 @@ export default function Page() {
     <div className={styles.chat_container}>
         <div className={styles.chat_child_messages}>
             <Messages messages={messages}/>
-            <div className={styles.message_padding}>
+            {response &&
+            <div className={styles.message_assistant_container}>
               <MarkdownMessage content={response} />
             </div>
+}
         </div>
         <div className={styles.chat_child_inputs}>
             <Inputs onClick={sendMessage}/>

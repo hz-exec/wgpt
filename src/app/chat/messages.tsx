@@ -1,5 +1,3 @@
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import styles from './page.module.css';
 import MarkdownMessage from './md';
 
@@ -28,18 +26,16 @@ export default function Messages(props: MessagesProps) {
             : styles.message_system_container;
         return (
             <div key={index} className={className}>
-                <div className={styles.message_padding}>
-                    {getContent(message.content)}
-                </div>
+                {getContent(message.content)}
             </div>
         );
     }
 
     return (
-        <div className={styles.messages_container}>
+        <>
             {props.messages.map((message, index) => (
                 renderMessage(message, index)
             ))}
-        </div>
+        </>
     );
 }

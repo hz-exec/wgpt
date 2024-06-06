@@ -10,15 +10,11 @@ const rehypePlugins = [rehypeSanitize];
 
 export default function MarkdownMessage(props: MarkdownMessageProps) {
     return (
-        <div className={styles.message_assistant_container}>
-        {/* <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {props.content}
-      </ReactMarkdown> */}
       <MarkdownPreview 
+        style={{margin: "0px", padding: "0px"}}
         source={props.content} 
         rehypePlugins={rehypePlugins}
         className={styles.message_assistant_container}
         />
-      </div>
     );
 }

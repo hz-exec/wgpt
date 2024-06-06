@@ -3,7 +3,7 @@
 import styles from './page.module.css';
 
 interface InputsProps {
-    onClick: (prompt: string) => void;
+    onClick: (query: string) => void;
 }
 
 export default function Inputs(props: InputsProps) {
@@ -15,14 +15,18 @@ export default function Inputs(props: InputsProps) {
         input.value = "";
     }
 
+    const handleUpload = () => {
+        const input = document.querySelector("input");
+        if (!input) return;
+
+        input.click();
+    }
+
     return (
-        <div className={styles.input_container}>
-            <div className={styles.inputs_child_input}>
-                <input type="text" width="100%"/>
-            </div>
-            <div className={styles.inputs_child_button}>
-                <button onClick={handleSend}>Send</button>
-            </div>
+        <div className={styles.inputs_container}>
+            <input type='file' className={styles.input_child_button} onClick={handleUpload} />
+            <input type="text" className={styles.input_child_text}/>
+            <button className={styles.input_child_button} onClick={handleSend}>Send</button>
         </div>
     );
 }
