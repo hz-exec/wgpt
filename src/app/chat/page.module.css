@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    /* max-width: 1024px; */
 }
 
 .chat_child_messages {
@@ -16,8 +17,7 @@
 .inputs_container {
     border-top: 1px solid rgba(var(--callout-border-rgb), 0.3);
     display: flex;
-
-    justify-content: space-between;
+    align-items: flex-end;
     padding: 10px;
     gap: 10px;
 }
@@ -31,6 +31,13 @@
 
 .input_child_button {
     padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(225, 239, 225);
+    height: fit-content;
+    cursor: pointer;
+}
+
+.input_child_button:hover {
     background-color: rgb(225, 239, 225);
 }
 
@@ -42,15 +49,15 @@
 .message_system_container {
     background-color: rgb(216, 229, 233);
     font-weight: 600;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 .message_assistant_container {
     background-color: white;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 .message_user_container {
     background-color: rgb(225, 239, 225);
-    padding: 10px;
+    padding: 10px 20px;
 }
